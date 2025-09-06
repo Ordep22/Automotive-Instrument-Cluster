@@ -39,7 +39,7 @@ Item {
     // Ponteiro como imagem (já pronto para “upgrade visual”)
     Image {
         id: needle
-        source: "qrc:/assets/images/needle.svg"     // por ora pode ser um PNG/retângulo
+        //source: "qrc:/assets/images/needle.svg"     // por ora pode ser um PNG/retângulo
         width: 8; height: root.height/2 - 30
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter

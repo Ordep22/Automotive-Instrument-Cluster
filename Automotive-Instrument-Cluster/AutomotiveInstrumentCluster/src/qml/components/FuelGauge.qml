@@ -5,6 +5,11 @@ Item {
     width: 400
     height: 80
 
+    Image {
+        id: fuel
+        source: "qrc:///AutomotiveInstrumentCluster/src/qml/Images/fuel.png"
+    }
+
     Column {
         anchors.centerIn: parent
         spacing: 8

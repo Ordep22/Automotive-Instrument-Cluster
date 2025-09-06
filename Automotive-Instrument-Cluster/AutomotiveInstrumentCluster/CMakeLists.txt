@@ -24,6 +24,9 @@ qt_add_qml_module(appAutomotiveInstrumentCluster
         src/qml/components/Speedometer.qml
         src/qml/components/GearIndicator.qml
         src/qml/components/FuelGauge.qml
+    # Liste todos os arquivos de imagem aqui
+    RESOURCES
+        src/qml/Images/fuel.png
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
