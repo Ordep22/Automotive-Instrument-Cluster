@@ -1,30 +1,35 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick
 
 Item {
-    width: 400
-    height: 80
+    //Valores que virão do processamento da interface
+    property real fuelmeterNeedleRotation: 10
 
+    property double fuelLevel: 0 // 0.0 a 1.0
+
+    property real maxValueAngle: 170
+    property real minValueAngle: 10
+    property real minimumValue: 100
+    property real fuelDegreesPerValue: Math.abs((maxValueAngle - minValueAngle)/ minimumValue)
+
+    anchors.right: parent.rigth
+    anchors.top: parent.top
+    width: 105
+    height: 7
+    rotation: fuelmeterNeedleRotation - 80
+
+    // Agulha
     Image {
-        id: fuel
-        source: "qrc:///AutomotiveInstrumentCluster/src/qml/Images/fuel.png"
+        anchors.left: parent.left
+        anchors.verticalCenterOffset: 0
+        anchors.leftMargin: -14
+        anchors.verticalCenter: parent.verticalCenter
+        source: "qrc:///AutomotiveInstrumentCluster/src/qml/Images/needle.png"
     }
 
-    Column {
-        anchors.centerIn: parent
-        spacing: 8
-
-        Text {
-            text: "Fuel: " + clusterBackend.fuel + "%"
-            color: "white"
-            font.pixelSize: 20
-        }
-
-        ProgressBar {
-            width: 360
-            from: 0
-            to: 100
-            value: clusterBackend.fuel
-        }
+    Behavior on fuelDegreesPerValue {
+        NumberAnimation { duration: 500 }
     }
+
 }
+
+

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-
+#https://doc.qt.io/QtSafeRenderer/qtsaferenderer-saferenderer-qtcluster-example.html
 project(AutomotiveInstrumentCluster VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
@@ -26,8 +26,11 @@ qt_add_qml_module(appAutomotiveInstrumentCluster
         src/qml/components/FuelGauge.qml
     # Liste todos os arquivos de imagem aqui
     RESOURCES
-        src/qml/Images/fuel.png
-)
+        src/qml/Images/Fuel_Level_Icon.png
+        src/qml/Images/pointer.png
+        src/qml/Images/needle.png
+        src/qml/Images/mainShape.png
+    )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
